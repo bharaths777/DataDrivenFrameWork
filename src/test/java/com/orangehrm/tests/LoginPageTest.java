@@ -33,18 +33,21 @@ public class LoginPageTest extends TestBase{
 	}
 	@Test(priority=1)
 	public void validateTitle() {
+		Log.info("Login page title validation...");
 		String title = loginPage.verifyTitle();
 		Assert.assertEquals("OrangeHRM", title);
 		Log.info("Login Page Title Verified...");
 	}
 	@Test(priority=2)
 	public void validateLogo() {
+		Log.info("Login page logo validation...");
 		boolean flag = loginPage.verifyLogo();
 		Assert.assertTrue(flag);
 		Log.info("Login Page logo Verified...");
 	}
 	@Test(dataProvider="getLoginData",priority=3)
 	public void validateLogin(String username,String password) {
+		Log.info("Login validation...");
 		loginPage.verifyLogin(username, password);
 		Log.info("Login success...");
 	}
